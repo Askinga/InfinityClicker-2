@@ -147,10 +147,10 @@ const infinityupgadedata = [
     {
         id: 12,
         effect: () => {
-            return DC.De40;
+            return DC.D1.5;
         },
-        decription: "inf req is now 1e40",
-        effectdisplay: value => format(value)+ " infinity requirment",
+        decription: "×1.5 infinity point gain :)",
+        effectdisplay: value => format(value)+ " infinity points",
         cost: DC.D5e3,
         currencykey: "infinitypoints",
         mainele: "INF-UG",
@@ -303,6 +303,7 @@ const infinity = {
     get gainedinfinitypoints(){
         let gain = DC.D1;
         gain = gain.mul(InfinityUpgrades[9].effectordefault(1)).mul(InfinityUpgrades[14].effectordefault(1));
+        gain = gain.mul(InfinityUpgrades[12].effectordefault(1));
         gain = gain.pow(InfinityUpgrades[16].effectordefault(1));
         gain = gain.pow(InfinityUpgrades[18].effectordefault(1));
         gain = gain.pow(InfinityUpgrades[19].effectordefault(1));
